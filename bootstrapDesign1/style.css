@@ -1,0 +1,169 @@
+
+@font-face {
+    font-family: f1;
+    src: url(KFOlCnqEu92Fr1MmEU9fBBc4.ttf);
+}
+
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+color: rgb(0, 0, 0);
+font-family: f1;
+
+
+}
+
+body{
+height: 100%;
+width: 100%;
+
+}
+
+/* .container-fluid{
+    padding: 10px;
+    width: 100%;
+    margin: 5px solid black;
+} */
+#firstPage{
+    width: 100%;
+    height: 100vh;
+    background-color: #ffffff;
+    /* background-image: url(VR\ Experiences.jfif);
+    object-fit: cover;
+    background-repeat: no-repeat; */
+    /* scale: 2; */
+}
+
+nav{
+    background-color: #b152e0 ;
+    color: white;
+    
+}
+.nav a{
+    color: white;
+    font-weight: 500;
+    font-size: 1vw;
+}
+.nav-item a{
+    color: white;
+}
+.nav{
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    margin: 0 20px 0 20px;
+    padding: 20px 40px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.navBarM{
+    
+
+    padding: 30px 0;
+}
+
+
+#twoSection{
+    position: relative;
+    display: flex;
+    /* flex-direction: row; */
+    
+     justify-content: space-around;
+     /* background-image: url(Japan.jfif);
+     height: 80vh;
+     width: 100%;
+     object-fit: cover; */
+
+}
+#secOne{
+    padding: 20px;
+    width: 55%;
+    height: 80vh;
+    border: 1px rgb(255, 255, 255) solid;
+    /* background-color: #ebc690; */
+    border-radius: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1vw;
+    font-weight: 900;
+    gap: 20px;
+    /* background-color: rgb(255, 105, 105); */
+}
+#secOne h1{
+    font-weight: 500;
+    font-size: 6vw;
+    color: transparent;
+    -webkit-text-stroke: 1px rgb(0, 0, 0);
+}
+#secOne h3{
+    font-weight: 300;
+    font-size: 2vw;
+}
+#secOne p{
+    font-weight: 400;
+    
+}
+#secTwo{
+    /* padding: 20px; */
+    width: 35%;
+    height: 80vh;
+    /* border: 1px rgb(0, 0, 0) solid; */
+    /* background-color: rgb(99, 88, 88); */
+}
+
+#secTwo img{
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    transform: rotateY(180deg);
+}
+
+
+@media (max-width: 1000px) {
+    #twoSection{
+        position: relative;
+        display: flex;
+        /* flex-direction: row; */
+        
+        flex-wrap: wrap;
+         /* background-image: url(Japan.jfif);
+         height: 80vh;
+         width: 100%;
+         object-fit: cover; */
+    
+    }
+    #secOne{
+        padding: 10px;
+        width: 80%;
+        height: 35vh;
+        border: 1px rgb(255, 255, 255) solid;
+        /* background-color: #ebc690; */
+        border-radius: 60px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 2.2vw;
+        font-weight: 900;
+        gap: 20px;
+        /* background-color: rgb(255, 105, 105); */
+    }
+    #secTwo img{
+        width: 30%;
+        height: 70vh;
+        object-fit: cover;
+        transform: rotateY(180deg);
+    }
+    #secOne h1{
+        font-weight: 500;
+        font-size: 10vw;
+        color: transparent;
+        -webkit-text-stroke: 1px rgb(0, 0, 0);
+    }
+    #secOne h3{
+        font-weight: 300;
+        font-size: 4vw;
+    }
+}

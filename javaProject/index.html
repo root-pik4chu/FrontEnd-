@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Integration</title>
+</head>
+<body>
+    <!-- Login Screen -->
+    <div id="loginScreen">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="login_id">Username:</label>
+            <input type="text" id="login_id" name="login_id" value="test@sunbasedata.com"><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" value="Test@123"><br><br>
+            <button id="loginButton">Login</button>
+        </form>
+    </div>
+
+    <!-- Customer List Screen -->
+    <div id="customerListScreen" style="display: none;">
+        <h2>Customer List</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="customerTableBody">
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Create Customer Screen -->
+    <div id="createCustomerScreen" style="display: none;">
+        <h2>Create Customer</h2>
+        <form id="createCustomerForm">
+            <label for="first_name">First Name:</label>
+            <input type="text" id="first_name" name="first_name" required><br><br>
+            <label for="last_name">Last Name:</label>
+            <input type="text" id="last_name" name="last_name" required><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br><br>
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone"><br><br>
+            <button id="createCustomerButton">Create Customer</button>
+        </form>
+    </div>
+    <!-- Create Customer Screen (continued from previous HTML) -->
+<button id="createCustomerButton">Create Customer</button>
+</form>
+</div>
+
+<!-- Update Customer Screen -->
+<div id="updateCustomerScreen" style="display: none;">
+    <h2>Update Customer</h2>
+    <form id="updateCustomerForm">
+        <label for="update_first_name">First Name:</label>
+        <input type="text" id="update_first_name" name="first_name" required><br><br>
+        <label for="update_last_name">Last Name:</label>
+        <input type="text" id="update_last_name" name="last_name" required><br><br>
+        <label for="update_email">Email:</label>
+        <input type="email" id="update_email" name="email"><br><br>
+        <label for="update_phone">Phone:</label>
+        <input type="tel" id="update_phone" name="phone"><br><br>
+        <button id="updateCustomerButton">Update Customer</button>
+    </form>
+</div>
+
+<!-- Delete Customer Screen -->
+<div id="deleteCustomerScreen" style="display: none;">
+    <h2>Delete Customer</h2>
+    <form id="deleteCustomerForm">
+        <label for="delete_uuid">Customer UUID:</label>
+        <input type="text" id="delete_uuid" name="uuid" required><br><br>
+        <button id="deleteCustomerButton">Delete Customer</button>
+    </form>
+</div>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+
+
+$(document).ready(function () {
+            // Global variable to store the bearer token
+            let bearerToken = null;
+
+            // Function to handle login
+            $("#loginButton").click(function () {
+                const loginId = $("#login_id").val();
+                const password = $("#password").val();
+
+                // Make a POST request to the authentication API
+                $.ajax({
+                    url: "https://qa2.sunbasedata.com/sunbase/portal/api/assignment_auth.jsp",
+                    type: "POST",
+                    data: JSON.stringify({
+                        login_id: loginId,
+                        password: password
+                    }),
+                    contentType: "application/json",
+                    success: function (data) {
+                        bearerToken = data.token;
+                        showCustomerListScreen();
+                    },
+                    error: function (xhr, status, error) {
+                        if (xhr.status === 401) {
+                            // Unauthorized - Authentication failed
+                            console.log("Authentication failed. Check your credentials.");
+                            // Display an error message to the user
+                        } else {
+                            console.log("Login failed:", error);
+                            // Handle other error cases
+                        }
+                    }
+                });
+            });
+
+            // ... Rest of your JavaScript code ...
+            $(document).ready(function () {
+        // Global variable to store the bearer token
+        let bearerToken = null;
+
+        // Function to handle login
+        $("#loginButton").click(function () {
+            const loginId = $("#login_id").val();
+            const password = $("#password").val();
+
+            // Make a POST request to the authentication API
+            $.ajax({
+                url: "https://qa2.sunbasedata.com/sunbase/portal/api/assignment_auth.jsp",
+                type: "POST",
+                data: JSON.stringify({
+                    login_id: loginId,
+                    password: password
+                }),
+                contentType: "application/json",
+                success: function (data) {
+                    bearerToken = data.token; // Store the bearer token
+                    showCustomerListScreen();
+                },
+                error: function (xhr, status, error) {
+                    console.log("Login failed:", error);
+                }
+            });
+        });
+
+        // Function to get the list of customers
+        function getCustomerList() {
+            $.ajax({
+                url: "https://qa2.sunbasedata.com/sunbase/portal/api/assignment.jsp?cmd=get_customer_list",
+                type: "GET",
+                headers: {
+                    "Authorization": "Bearer " + bearerToken
+                },
+                success: function (data) {
+                    // Update the customer table with the data
+                    // ...
+                },
+                error: function (xhr, status, error) {
+                    console.log("Failed to get customer list:", error);
+                }
+            });
+        }
+
+        // Function to show the customer list screen
+        function showCustomerListScreen() {
+            $("#loginScreen").hide();
+            $("#customerListScreen").show();
+            getCustomerList();
+        }
+
+        // Other functions for creating, updating, and deleting customers can be implemented similarly.
+        // Function to create a new customer
+$("#createCustomerButton").click(function () {
+    const firstName = $("#first_name").val();
+    const lastName = $("#last_name").val();
+    const email = $("#email").val();
+    const phone = $("#phone").val();
+
+    // Make a POST request to create a customer
+    $.ajax({
+        url: "https://qa2.sunbasedata.com/sunbase/portal/api/assignment.jsp?cmd=create",
+        type: "POST",
+        headers: {
+            "Authorization": "Bearer " + bearerToken
+        },
+        data: JSON.stringify({
+            first_name: firstName,
+            last_name: lastName,
+            email: email,
+            phone: phone
+        }),
+        contentType: "application/json",
+        success: function (data) {
+            // Handle success
+            // ...
+        },
+        error: function (xhr, status, error) {
+            // Handle error
+            console.log("Create customer failed:", error);
+        }
+    });
+});
+
+        });
+    });
+</script>
+
+</body>
+</html>

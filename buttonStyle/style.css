@@ -1,0 +1,166 @@
+@font-face {
+    font-family: t1;
+    src: url(apercu-medium-pro.ttf);
+}
+
+:root {
+    --gradient-pos-x: 50%;
+    --gradient-pos-y: 50%;
+    --border-radius: 99999px;
+    --border-gap: 2px;
+  }
+  
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: t1;
+  }
+  
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: #111;
+    /* display: grid;
+    /* place-items: center;
+    height: 100vh; */ */
+  }
+  
+  .button {
+    position: relative;
+    display: inline-block;
+    border: none;
+    border-radius: var(--border-radius);
+    background: gray;
+    position: relative;
+    padding: var(--border-gap);
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  
+  .content {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    padding: 1rem 2rem;
+    white-space: nowrap;
+    color: #ffffff;
+    background-color: #0d0d12;
+    border-radius: var(--border-radius);
+    width: calc(100% - var(--border-gap));
+    height: calc(100% - var(--border-gap));
+  }
+  
+  .border,
+  .neon {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+  }
+  
+  .neon {
+    filter: blur(10px);
+    opacity: 0.5;
+  }
+  
+  .gradient {
+    position: absolute;
+    inset: -200px;
+    background: conic-gradient(
+      from 0deg at var(--gradient-pos-x) var(--gradient-pos-y),
+      #1e87ff,
+      #5c13c4,
+      #ff0033,
+      #ffda00,
+      #64bc26,
+      #1e87ff
+    );
+  
+    border-radius: var(--border-radius);
+    animation: rotate 4s linear infinite;
+  }
+  
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+
+
+
+
+
+
+
+  /* cursor */
+
+  .cursor {
+    pointer-events: none;
+    position: fixed;
+    display: block;
+    border-radius: 0;
+    mix-blend-mode: difference;
+    top: 0;
+    left: 0;
+    z-index: 9999999999999999;  
+}
+
+.circle {
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255) !important;
+}
+
+/* booommm */
+#main{
+    width: 100%;
+    /* height: ; */
+}
+
+.page1{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(22, 22, 22);
+    color: white;
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+
+
+}
+.right{
+    width: 50%;
+    display: flex;
+    align-items: start;
+    gap: 20px;
+    flex-direction: column;
+    margin: 30vh 10vw;
+    /* justify-content: start; */
+}   
+.page1 .right   h1{
+    font-size: 10vh;
+}
+.page1 .right   p{
+    font-size: 1.2vw;
+}
+.left{
+    width: 50%;
+    margin: 50px;
+    border: 2px white solid;
+}

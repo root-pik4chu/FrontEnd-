@@ -1,0 +1,370 @@
+@font-face {
+    font-family: text1;
+    src: url(GeneralSans-Regular.otf);
+}
+
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+color: rgb(0, 0, 0);
+font-family: Caveat Brush ,'serif';
+color: white;
+background-color: black;
+font-family: text1;
+}
+*::selection{
+    color: black;
+    background-color: rgb(255, 255, 255);
+}
+
+body{
+height: 100%;
+width: 100%;
+/* display: flex;
+align-items: center;
+justify-content: center; */
+}
+
+/* --------------- */ 
+
+#minicircle{
+    transition: all cubic-bezier(0.19 , 1 , 0.22 , 1 ) .5s;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    z-index: 9000;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+/* ---------------- */
+.main{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    background-color: black;
+}
+
+
+.hero{
+    height: 100vh;
+    width: 100%;
+    /* background-color: rgb(135, 168, 211); */
+    padding: 20px 40px;
+    position: relative;
+    
+}
+
+.navbar{
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border-bottom: 2px solid white; */
+    padding: 10px 40px;
+
+}
+.navbar a{
+    text-decoration: none;
+}
+.navbar h5{
+    text-transform: uppercase;
+}
+
+#heading{
+    margin-top: 90px;
+}
+
+#heading h1{
+    font-size: 9.5vw;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 1;
+    opacity: .6 ;
+}
+#heading #gap_2{
+    margin-left: 250px;
+}
+
+.box{
+    width: fit-content;
+    /* background-color: red; */
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
+}
+/* day 3 animation part play ..... umm hover effect */
+/* .box .play{
+    background-color: white;
+    height: 350px;
+    width: 350px;
+    position: fixed;
+    border-radius: 50%;
+    scale: 0;
+    opacity: 0;
+    z-index: 200;
+} */
+
+
+
+
+
+.box .hiddenElements{
+    transform: translateY(100%);
+}
+
+
+.blockText{
+    /* !at the time of animation */
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+
+    width: fit-content;
+    /* background-color: red; */
+}
+.blockText h5{
+    text-align: right;
+    font-size: 1.1vw;
+    opacity: .6 ;
+    text-transform: uppercase;
+
+}
+
+#chotaWalaHeading{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    margin-top: 100px;
+}
+
+#chotaWalaHeading h5{
+    text-transform: uppercase;
+    opacity: .6 ;
+    font-size: 1vw;
+    text-align: right;
+}
+
+.herofooter{
+    opacity: 0;
+    padding: 0 1vw;
+    width: 100%;
+    position: absolute;
+    bottom: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.herofooter a{
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.arrow{
+    margin-right: 50px;
+    display: flex;
+    gap: 5px;
+    
+}
+.arrow .circle{
+    /* margin-right: 20px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50PX;
+    height: 50PX;
+    border-radius: 50%;
+    border: 1px solid white;
+    background-color: rgb(0, 0, 0);
+}
+
+.second{
+    width: 100%;
+    /* height: 240vh; */
+    padding-top: 200px ;
+    padding-left: 2%;
+    
+}
+.elem{
+    position: relative;
+    padding: 4vh 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid white;
+    width: 90%;
+    padding-left: 20px ;
+    opacity: .5;
+
+    
+    
+}
+
+
+
+#lastElem{
+    border-bottom: 1px solid white;
+}
+.elem h1 {
+    font-size: 5vw;
+}
+
+
+.elem img{
+    z-index: 999;
+    height: 150%;
+    position: absolute;
+    /* display: none; */
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+}
+/* .page2{
+    width: 100%;
+    height: 100vh;
+    background-color: red;
+} */
+
+
+.aboutUS{
+    padding: 10vw 20vh;
+    padding-left: 40vw;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: .8rem;
+
+    /* margin: 50px; */
+    
+}
+
+
+.aboutUS img{
+    width: 15vw;
+    border-radius: 50%;
+    overflow: hidden;
+
+
+}
+
+.aboutUS .about p{
+    width: 20rem;
+    
+    opacity: .6;
+    /* font-size: .9rem; */
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+.aboutUS .about a{
+    
+    text-decoration: none;
+    padding: 10px 30px;
+    border: 1px solid white;
+    border-radius: 100px;
+}
+
+
+.lastSection{
+    
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    position: relative;
+
+}
+
+.lastSection .links{
+
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 0 50px;
+    display: flex;
+    gap: 30px;
+}
+.lastSection .links a{
+    text-decoration: none;
+    bottom: 10%;
+}
+
+
+
+
+/* ------preloader-------- */
+/* .baudy{
+    padding-top: 20%;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+} */
+.container img{
+    position: absolute;
+    z-index: 9999999;
+    display: none;
+}
+.container{
+    /* margin-top: 25%; */
+    z-index: 99999;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ring{
+    margin-top: 50%;
+    width: 300px;
+    height: 300px;
+    border: 0px solid rgb(255, 255, 255);
+    border-radius: 50%;
+    position: absolute ;
+}
+
+.ring:nth-child(1){
+    border-bottom-width: 10px;
+    border-color: rgb(255, 255, 255);
+    animation: rotate1 2s linear infinite;
+}
+.ring:nth-child(2){
+    border-right-width: 10px;
+    border-color: rgb(255, 255, 255);
+    animation: rotate2 2s linear infinite;
+}
+.ring:nth-child(3){
+    border-top-width: 10px;
+    border-color: rgb(255, 255, 255);
+    animation: rotate3 2s linear infinite;
+}
+@keyframes rotate1 {
+    0%{
+        transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+    }
+    100%{
+
+        transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+    }
+}
+@keyframes rotate2 {
+    0%{
+        transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+    }
+    100%{
+
+        transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+    }
+}
+@keyframes rotate3 {
+    0%{
+        transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+    }
+    100%{
+
+        transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+    }
+}

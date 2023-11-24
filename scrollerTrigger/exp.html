@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Translation</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <p>City: <input type="text" id="cmn"> <button id="submit">Get translation</button></p>
+
+    <br>Translation of "<b id='c1'></b>":
+    <p id='translet'></p>
+
+    <script>
+        async function translateText() {
+            const options = {
+                method: 'GET',
+                url: 'https://just-translated.p.rapidapi.com/',
+                params: {
+                    lang: 'fr',
+                    text: 'Hello, how are you?'
+                },
+                headers: {
+                    'X-RapidAPI-Key': '75096716abmsh6b82c774b8c95b0p19ab53jsn93f717f525b1',
+                    'X-RapidAPI-Host': 'just-translated.p.rapidapi.com'
+                }
+            };
+
+            try {
+                const response = await axios.request(options);
+                return response.data; // Return the translated text
+            } catch (error) {
+                console.error(error);
+                throw error; // Rethrow the error to handle it elsewhere, if needed
+            }
+        }
+
+        // Call the translateText function when the button is clicked
+        document.getElementById('submit').addEventListener('click', async () => {
+            const translatedText = await translateText();
+            const city = document.getElementById('cmn').value;
+            document.getElementById('c1').textContent = city;
+            document.getElementById('translet').textContent = translatedText;
+        });
+    </script>
+</body>
+</html>

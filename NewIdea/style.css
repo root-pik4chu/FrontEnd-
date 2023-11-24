@@ -1,0 +1,56 @@
+
+
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+color: rgb(0, 0, 0);
+font-family: Caveat Brush ,'serif';
+}
+
+html,body{
+height: 100%;
+width: 100%;
+}
+
+
+
+/* .page{
+    z-index: -1;
+    width: 100%;
+    max-width: 92vw;
+    background-image: url(https://assets-global.website-files.com/64da122…/64edce6…_Rectangle.png);
+    background-position: 50%;
+    background-repeat: repeat;
+    background-size: 1280px;
+    display: block;
+    position: absolute;
+    overflow: hidden;
+    
+} */
+#particles-js{
+    height: 100vh;
+    width: 40%;
+    background-color: rgb(0, 0, 0);
+}
+
+#particles-js h1{
+    font-size: 3em;
+    color: white;
+}
+.page1{
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.page2{
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(0, 183, 255);
+}
+
+

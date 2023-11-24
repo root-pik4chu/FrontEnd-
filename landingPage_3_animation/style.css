@@ -1,0 +1,94 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+color: rgb(0, 0, 0);
+font-family: Caveat Brush ,'serif';
+}
+
+body{
+height: 100%;
+width: 100%;
+}
+
+#main{  
+    position: relative;
+    overflow: hidden;
+
+}
+
+.page0{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(104, 255, 162);
+}
+.page0>.hero1{
+    display: flex;
+    justify-content: space-between;
+    padding: 10% 5% ;
+}
+.page0>.hero1>.img_1{
+    width: 40%;
+    height: 60vh;
+    background-color: lightslategray;
+}
+
+.page0>.hero1>.text_1{
+    width: 40%;
+    height: 60vh;
+    background-color: lightslategray;
+}
+.page1{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background-color: lightblue;
+    align-items: center;
+    /* top: 50%; */
+}
+.b{
+    
+    width: 500px;
+    height: 200px;
+    margin: 0 5%;
+}
+.box1{
+    position: relative;
+    /* padding-top: 10vh; */
+    /* position: absolute; */
+    /* margin-top: 50vh; */
+    /* top: 30vh; */
+    
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%); */
+    background-color: rgb(143, 74, 255);
+    /* opacity: 0; */
+    
+}
+
+.box2{
+    position: relative;
+    
+    background-color: rgb(255, 74, 246);
+
+}
+
+.box3{
+    position: relative;
+
+    background-color: rgb(255, 74, 128);
+}
+.page>.box1>h1{
+
+    
+}
+
+.page2{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(255, 69, 69);
+}
